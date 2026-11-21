@@ -1,0 +1,38 @@
+[project]
+name = "a-share-research"
+version = "0.1.0"
+description = "A-share research platform engineering baseline"
+requires-python = "==3.13.*"
+dependencies = [
+    "fastapi==0.162.0",
+    "pydantic-settings==2.16.2",
+    "uvicorn==0.54.0",
+    "httpx==0.28.1",
+    "psycopg[binary]==3.2.13",
+    "redis==6.4.0",
+    "prometheus-client==0.23.1",
+    "langgraph==1.2.20",
+]
+
+[dependency-groups]
+# Prefect 3.6.4 imports the backport from its worker path even on Python 3.13.
+workflows = ["importlib-metadata==8.7.0", "prefect==3.6.4"]
+dev = [
+    "httpx==0.28.1",
+    "pytest==9.2.0",
+    "pytest-socket==0.8.1",
+    "ruff==0.17.4",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["backend/tests"]
+pythonpath = ["backend"]
+addopts = "-q --allow-hosts=127.0.0.1,::1 --allow-unix-socket"
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+src = ["backend"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

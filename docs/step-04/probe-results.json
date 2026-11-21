@@ -1,0 +1,1106 @@
+{
+  "generated_at": "2026-11-07T17:29:41.254258+08:00",
+  "budget": {
+    "max_http_requests": 36,
+    "max_seconds": 180
+  },
+  "scope": "000001.SZ；行情20260901–20260930；财务公告20230101–20260930",
+  "records": [
+    {
+      "api": "stock_basic",
+      "domain": "证券/基础行业",
+      "status": "available",
+      "permission": "observed_success",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0
+          },
+          "requested_fields": "ts_code,name,industry,list_date",
+          "fields": [
+            "ts_code",
+            "name",
+            "industry",
+            "list_date"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "not_applicable",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "name": "平安银行",
+              "industry": "银行",
+              "list_date": "19910403"
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 2
+          },
+          "requested_fields": "ts_code,name,industry,list_date",
+          "fields": [
+            "ts_code",
+            "name",
+            "industry",
+            "list_date"
+          ],
+          "row_count": 0,
+          "checks": {
+            "fields": "effective",
+            "security": "pending",
+            "date": "not_applicable",
+            "limit": "pending"
+          },
+          "sample": []
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 1,
+            "offset": 0
+          },
+          "requested_fields": "ts_code",
+          "fields": [
+            "ts_code"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "not_applicable",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ"
+            }
+          ]
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "pending",
+      "observation": "success_with_data"
+    },
+    {
+      "api": "daily",
+      "domain": "日线",
+      "status": "available",
+      "permission": "observed_success",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,trade_date,open,high,low,close,vol",
+          "fields": [
+            "ts_code",
+            "trade_date",
+            "open",
+            "high",
+            "low",
+            "close",
+            "vol"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260930",
+              "open": 11.36,
+              "high": 11.65,
+              "low": 11.33,
+              "close": 11.57,
+              "vol": 1045357.45
+            },
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260929",
+              "open": 11.3,
+              "high": 11.41,
+              "low": 11.28,
+              "close": 11.35,
+              "vol": 690979.09
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 2,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,trade_date,open,high,low,close,vol",
+          "fields": [
+            "ts_code",
+            "trade_date",
+            "open",
+            "high",
+            "low",
+            "close",
+            "vol"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260928",
+              "open": 11.28,
+              "high": 11.41,
+              "low": 11.27,
+              "close": 11.3,
+              "vol": 715341.43
+            },
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260924",
+              "open": 11.35,
+              "high": 11.47,
+              "low": 11.29,
+              "close": 11.3,
+              "vol": 1043818.72
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 1,
+            "offset": 0,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code",
+          "fields": [
+            "ts_code"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "pending",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ"
+            }
+          ]
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "observed_disjoint_pages",
+      "observation": "success_with_data"
+    },
+    {
+      "api": "daily_basic",
+      "domain": "估值",
+      "status": "available",
+      "permission": "observed_success",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,trade_date,pe,pe_ttm,pb,total_mv",
+          "fields": [
+            "ts_code",
+            "trade_date",
+            "pe",
+            "pe_ttm",
+            "pb",
+            "total_mv"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260930",
+              "pe": 5.2665,
+              "pe_ttm": 5.1664,
+              "pb": 0.4795,
+              "total_mv": 22452647.3574
+            },
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260929",
+              "pe": 5.1664,
+              "pe_ttm": 5.0682,
+              "pb": 0.4704,
+              "total_mv": 22025717.157
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 2,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,trade_date,pe,pe_ttm,pb,total_mv",
+          "fields": [
+            "ts_code",
+            "trade_date",
+            "pe",
+            "pe_ttm",
+            "pb",
+            "total_mv"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260928",
+              "pe": 5.1436,
+              "pe_ttm": 5.0458,
+              "pb": 0.4683,
+              "total_mv": 21928687.566
+            },
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260924",
+              "pe": 5.1436,
+              "pe_ttm": 5.0458,
+              "pb": 0.4683,
+              "total_mv": 21928687.566
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 1,
+            "offset": 0,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code",
+          "fields": [
+            "ts_code"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "pending",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ"
+            }
+          ]
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "observed_disjoint_pages",
+      "observation": "success_with_data"
+    },
+    {
+      "api": "income",
+      "domain": "利润表",
+      "status": "available",
+      "permission": "observed_success",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0,
+            "start_date": "20230101",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,ann_date,end_date,revenue,n_income_attr_p",
+          "fields": [
+            "ts_code",
+            "ann_date",
+            "end_date",
+            "revenue",
+            "n_income_attr_p"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260815",
+              "end_date": "20260630",
+              "revenue": 70617000000,
+              "n_income_attr_p": 25696000000
+            },
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260815",
+              "end_date": "20260630",
+              "revenue": 70617000000,
+              "n_income_attr_p": 25696000000
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 2,
+            "start_date": "20230101",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,ann_date,end_date,revenue,n_income_attr_p",
+          "fields": [
+            "ts_code",
+            "ann_date",
+            "end_date",
+            "revenue",
+            "n_income_attr_p"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260425",
+              "end_date": "20260331",
+              "revenue": 35277000000,
+              "n_income_attr_p": 14523000000
+            },
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260321",
+              "end_date": "20251231",
+              "revenue": 131442000000,
+              "n_income_attr_p": 42633000000
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 1,
+            "offset": 0,
+            "start_date": "20230101",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code",
+          "fields": [
+            "ts_code"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "pending",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ"
+            }
+          ]
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "observed_disjoint_pages",
+      "observation": "success_with_data"
+    },
+    {
+      "api": "balancesheet",
+      "domain": "资产负债表",
+      "status": "available",
+      "permission": "observed_success",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0,
+            "start_date": "20230101",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,ann_date,end_date,total_assets,total_liab",
+          "fields": [
+            "ts_code",
+            "ann_date",
+            "end_date",
+            "total_assets",
+            "total_liab"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260815",
+              "end_date": "20260630",
+              "total_assets": 6028785000000,
+              "total_liab": 5480571000000
+            },
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260815",
+              "end_date": "20260630",
+              "total_assets": 6028785000000,
+              "total_liab": 5480571000000
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 2,
+            "start_date": "20230101",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,ann_date,end_date,total_assets,total_liab",
+          "fields": [
+            "ts_code",
+            "ann_date",
+            "end_date",
+            "total_assets",
+            "total_liab"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260425",
+              "end_date": "20260331",
+              "total_assets": 6033962000000,
+              "total_liab": 5489879000000
+            },
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260425",
+              "end_date": "20260331",
+              "total_assets": 6033962000000,
+              "total_liab": 5489879000000
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 1,
+            "offset": 0,
+            "start_date": "20230101",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code",
+          "fields": [
+            "ts_code"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "pending",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ"
+            }
+          ]
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "observed_disjoint_pages",
+      "observation": "success_with_data"
+    },
+    {
+      "api": "cashflow",
+      "domain": "现金流量表",
+      "status": "available",
+      "permission": "observed_success",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0,
+            "start_date": "20230101",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,ann_date,end_date,n_cashflow_act",
+          "fields": [
+            "ts_code",
+            "ann_date",
+            "end_date",
+            "n_cashflow_act"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260815",
+              "end_date": "20260630",
+              "n_cashflow_act": 215012000000
+            },
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260425",
+              "end_date": "20260331",
+              "n_cashflow_act": 37802000000
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 2,
+            "start_date": "20230101",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,ann_date,end_date,n_cashflow_act",
+          "fields": [
+            "ts_code",
+            "ann_date",
+            "end_date",
+            "n_cashflow_act"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260321",
+              "end_date": "20251231",
+              "n_cashflow_act": 315858000000
+            },
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20251025",
+              "end_date": "20250930",
+              "n_cashflow_act": 71783000000
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 1,
+            "offset": 0,
+            "start_date": "20230101",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code",
+          "fields": [
+            "ts_code"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "pending",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ"
+            }
+          ]
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "observed_disjoint_pages",
+      "observation": "success_with_data"
+    },
+    {
+      "api": "dividend",
+      "domain": "分红",
+      "status": "pending",
+      "permission": "observed_success",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0,
+            "start_date": "20230101",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,ann_date,end_date,cash_div,ex_date",
+          "fields": [
+            "ts_code",
+            "ann_date",
+            "end_date",
+            "cash_div",
+            "ex_date"
+          ],
+          "row_count": 0,
+          "checks": {
+            "fields": "effective",
+            "security": "pending",
+            "date": "pending",
+            "limit": "pending"
+          },
+          "sample": []
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 2,
+            "start_date": "20230101",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,ann_date,end_date,cash_div,ex_date",
+          "fields": [
+            "ts_code",
+            "ann_date",
+            "end_date",
+            "cash_div",
+            "ex_date"
+          ],
+          "row_count": 0,
+          "checks": {
+            "fields": "effective",
+            "security": "pending",
+            "date": "pending",
+            "limit": "pending"
+          },
+          "sample": []
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 1,
+            "offset": 0,
+            "start_date": "20230101",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code",
+          "fields": [
+            "ts_code"
+          ],
+          "row_count": 0,
+          "checks": {
+            "fields": "effective",
+            "security": "pending",
+            "date": "pending",
+            "limit": "pending"
+          },
+          "sample": []
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "pending",
+      "observation": "success_empty"
+    },
+    {
+      "api": "index_member_all",
+      "domain": "申万行业",
+      "status": "available",
+      "permission": "observed_success",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0
+          },
+          "requested_fields": "ts_code,l1_code,l1_name,in_date,out_date",
+          "fields": [
+            "ts_code",
+            "l1_code",
+            "l1_name",
+            "in_date",
+            "out_date"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "not_applicable",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "l1_code": "801780.SI",
+              "l1_name": "银行",
+              "in_date": "19910403",
+              "out_date": null
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 2
+          },
+          "requested_fields": "ts_code,l1_code,l1_name,in_date,out_date",
+          "fields": [
+            "ts_code",
+            "l1_code",
+            "l1_name",
+            "in_date",
+            "out_date"
+          ],
+          "row_count": 0,
+          "checks": {
+            "fields": "effective",
+            "security": "pending",
+            "date": "not_applicable",
+            "limit": "pending"
+          },
+          "sample": []
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 1,
+            "offset": 0
+          },
+          "requested_fields": "ts_code",
+          "fields": [
+            "ts_code"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "not_applicable",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ"
+            }
+          ]
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "pending",
+      "observation": "success_with_data"
+    },
+    {
+      "api": "adj_factor",
+      "domain": "复权",
+      "status": "available",
+      "permission": "observed_success",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,trade_date,adj_factor",
+          "fields": [
+            "ts_code",
+            "trade_date",
+            "adj_factor"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260930",
+              "adj_factor": 142.0699
+            },
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260929",
+              "adj_factor": 142.0699
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 2,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,trade_date,adj_factor",
+          "fields": [
+            "ts_code",
+            "trade_date",
+            "adj_factor"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260928",
+              "adj_factor": 142.0699
+            },
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260924",
+              "adj_factor": 142.0699
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 1,
+            "offset": 0,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code",
+          "fields": [
+            "ts_code"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "pending",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ"
+            }
+          ]
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "observed_disjoint_pages",
+      "observation": "success_with_data"
+    },
+    {
+      "api": "trade_cal",
+      "domain": "交易日历",
+      "status": "available",
+      "permission": "observed_success",
+      "requests": [
+        {
+          "params": {
+            "exchange": "SSE",
+            "limit": 2,
+            "offset": 0,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "exchange,cal_date,is_open",
+          "fields": [
+            "exchange",
+            "cal_date",
+            "is_open"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "exchange": "SSE",
+              "cal_date": "20260930",
+              "is_open": 1
+            },
+            {
+              "exchange": "SSE",
+              "cal_date": "20260929",
+              "is_open": 1
+            }
+          ]
+        },
+        {
+          "params": {
+            "exchange": "SSE",
+            "limit": 2,
+            "offset": 2,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "exchange,cal_date,is_open",
+          "fields": [
+            "exchange",
+            "cal_date",
+            "is_open"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "exchange": "SSE",
+              "cal_date": "20260928",
+              "is_open": 1
+            },
+            {
+              "exchange": "SSE",
+              "cal_date": "20260927",
+              "is_open": 0
+            }
+          ]
+        },
+        {
+          "params": {
+            "exchange": "SSE",
+            "limit": 1,
+            "offset": 0,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "exchange",
+          "fields": [
+            "exchange"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "pending",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "exchange": "SSE"
+            }
+          ]
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "observed_disjoint_pages",
+      "observation": "success_with_data"
+    },
+    {
+      "api": "stk_mins",
+      "domain": "分钟",
+      "status": "unavailable",
+      "permission": "denied",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0,
+            "freq": "1min",
+            "start_date": "20260930",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,trade_time,close",
+          "error": "permission_denied"
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "pending"
+    },
+    {
+      "api": "rt_k",
+      "domain": "实时",
+      "status": "unavailable",
+      "permission": "denied",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0
+          },
+          "requested_fields": "ts_code,close",
+          "error": "permission_denied"
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "pending"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+:root { font-family: system-ui, sans-serif; color: #182438; background: #f2f5f9; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+header { margin-bottom: 1.5rem; }
+header p { color: #52647a; }
+section { background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: 12px; box-shadow: 0 2px 14px #1b385012; }
+form { display: flex; align-items: end; gap: 1rem; margin-top: 1rem; }
+label { display: grid; gap: .35rem; flex: 1; font-weight: 600; }
+input { width: 100%; padding: .7rem; border: 1px solid #b8c6d6; border-radius: 6px; font: inherit; }
+button { padding: .75rem 1rem; border: 0; border-radius: 6px; background: #175bc2; color: white; font: inherit; cursor: pointer; margin-right: .5rem; }
+button:disabled { opacity: .55; cursor: wait; }
+button.secondary { background: #65758b; }
+.status { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.status h2 { margin: 0; }
+.task-id { color: #65758b; overflow-wrap: anywhere; }
+.error { color: #a52231; }
+pre { overflow: auto; background: #f4f7fa; padding: 1rem; border-radius: 6px; white-space: pre-wrap; }
+@media (max-width: 600px) { form, .status { display: grid; } }

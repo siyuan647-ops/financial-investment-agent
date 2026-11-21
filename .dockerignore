@@ -1,0 +1,13 @@
+*
+!backend/
+!backend/app/
+!backend/app/**
+!backend/migrations/
+!backend/migrations/**
+!infra/
+!infra/requirements.txt
+!infra/reference-requirements.txt
+!infra/Dockerfile
+!infra/Dockerfile.reference
+**/__pycache__
+

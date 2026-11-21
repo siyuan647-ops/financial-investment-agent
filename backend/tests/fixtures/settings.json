@@ -1,0 +1,12 @@
+{
+  "environment": "test",
+  "database_url": "postgresql://fixture:fixture@127.0.0.1:5432/fixture",
+  "redis_url": "redis://127.0.0.1:6379/15",
+  "data_source_url": "https://fixture.example.invalid",
+  "data_source_token": "fixture-source-secret",
+  "auth_credentials": [
+    {"token": "fixture-user-token-0000000000000001", "user_id": "alice", "role": "user"},
+    {"token": "fixture-data-token-0000000000000002", "user_id": "data", "role": "data_admin"},
+    {"token": "fixture-system-token-00000000000003", "user_id": "system", "role": "system_admin"}
+  ]
+}

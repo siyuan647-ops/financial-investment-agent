@@ -1,0 +1,386 @@
+{
+  "generated_at": "2026-11-07T17:30:25.558102+08:00",
+  "budget": {
+    "max_http_requests": 12,
+    "max_seconds": 180
+  },
+  "scope": "000001.SZ；日线另对照600000.SH；行情20260901–20260930；财务公告20230101–20260930；分红仅按证券",
+  "records": [
+    {
+      "api": "daily",
+      "domain": "日线",
+      "status": "available",
+      "permission": "observed_success",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,trade_date,open,high,low,close,vol",
+          "fields": [
+            "ts_code",
+            "trade_date",
+            "open",
+            "high",
+            "low",
+            "close",
+            "vol"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260930",
+              "open": 11.36,
+              "high": 11.65,
+              "low": 11.33,
+              "close": 11.57,
+              "vol": 1045357.45
+            },
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260929",
+              "open": 11.3,
+              "high": 11.41,
+              "low": 11.28,
+              "close": 11.35,
+              "vol": 690979.09
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 2,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,trade_date,open,high,low,close,vol",
+          "fields": [
+            "ts_code",
+            "trade_date",
+            "open",
+            "high",
+            "low",
+            "close",
+            "vol"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260928",
+              "open": 11.28,
+              "high": 11.41,
+              "low": 11.27,
+              "close": 11.3,
+              "vol": 715341.43
+            },
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260924",
+              "open": 11.35,
+              "high": 11.47,
+              "low": 11.29,
+              "close": 11.3,
+              "vol": 1043818.72
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 1,
+            "offset": 0,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code",
+          "fields": [
+            "ts_code"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "pending",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ"
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "trade_date": "20260930",
+            "limit": 2
+          },
+          "requested_fields": "ts_code,trade_date,open,high,low,close,vol",
+          "fields": [
+            "ts_code",
+            "trade_date",
+            "open",
+            "high",
+            "low",
+            "close",
+            "vol"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260930",
+              "open": 11.36,
+              "high": 11.65,
+              "low": 11.33,
+              "close": 11.57,
+              "vol": 1045357.45
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "trade_date": "20260929",
+            "limit": 2
+          },
+          "requested_fields": "ts_code,trade_date,open,high,low,close,vol",
+          "fields": [
+            "ts_code",
+            "trade_date",
+            "open",
+            "high",
+            "low",
+            "close",
+            "vol"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "trade_date": "20260929",
+              "open": 11.3,
+              "high": 11.41,
+              "low": 11.28,
+              "close": 11.35,
+              "vol": 690979.09
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "600000.SH",
+            "limit": 2,
+            "offset": 0,
+            "start_date": "20260901",
+            "end_date": "20260930"
+          },
+          "requested_fields": "ts_code,trade_date,open,high,low,close,vol",
+          "fields": [
+            "ts_code",
+            "trade_date",
+            "open",
+            "high",
+            "low",
+            "close",
+            "vol"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "effective",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "600000.SH",
+              "trade_date": "20260930",
+              "open": 9.22,
+              "high": 9.49,
+              "low": 9.16,
+              "close": 9.48,
+              "vol": 1474848.2
+            },
+            {
+              "ts_code": "600000.SH",
+              "trade_date": "20260929",
+              "open": 9.15,
+              "high": 9.25,
+              "low": 9.09,
+              "close": 9.18,
+              "vol": 805097.39
+            }
+          ]
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "observed_disjoint_pages",
+      "observation": "success_with_data"
+    },
+    {
+      "api": "dividend",
+      "domain": "分红",
+      "status": "available",
+      "permission": "observed_success",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0
+          },
+          "requested_fields": "ts_code,ann_date,end_date,cash_div,ex_date",
+          "fields": [
+            "ts_code",
+            "ann_date",
+            "end_date",
+            "cash_div",
+            "ex_date"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "not_applicable",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260815",
+              "end_date": "20260630",
+              "cash_div": 0,
+              "ex_date": null
+            },
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260815",
+              "end_date": "20260630",
+              "cash_div": null,
+              "ex_date": null
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 2
+          },
+          "requested_fields": "ts_code,ann_date,end_date,cash_div,ex_date",
+          "fields": [
+            "ts_code",
+            "ann_date",
+            "end_date",
+            "cash_div",
+            "ex_date"
+          ],
+          "row_count": 2,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "not_applicable",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260815",
+              "end_date": "20260630",
+              "cash_div": 0.249,
+              "ex_date": "20260924"
+            },
+            {
+              "ts_code": "000001.SZ",
+              "ann_date": "20260321",
+              "end_date": "20251231",
+              "cash_div": 0,
+              "ex_date": null
+            }
+          ]
+        },
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 1,
+            "offset": 0
+          },
+          "requested_fields": "ts_code",
+          "fields": [
+            "ts_code"
+          ],
+          "row_count": 1,
+          "checks": {
+            "fields": "effective",
+            "security": "effective",
+            "date": "not_applicable",
+            "limit": "effective"
+          },
+          "sample": [
+            {
+              "ts_code": "000001.SZ"
+            }
+          ]
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "observed_disjoint_pages",
+      "observation": "success_with_data"
+    },
+    {
+      "api": "stk_mins",
+      "domain": "分钟",
+      "status": "unavailable",
+      "permission": "denied",
+      "requests": [
+        {
+          "params": {
+            "ts_code": "000001.SZ",
+            "limit": 2,
+            "offset": 0,
+            "freq": "1min",
+            "start_date": "2026-09-30 09:30:00",
+            "end_date": "2026-09-30 09:35:00"
+          },
+          "requested_fields": "ts_code,trade_time,close",
+          "error": "permission_denied"
+        }
+      ],
+      "history": "仅探测指定窗口；不证明历史完整性",
+      "pagination": "pending"
+    }
+  ]
+}

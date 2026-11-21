@@ -1,0 +1,987 @@
+{
+  "notice": "待验收；离线契约样例。request_id 为合成值；历史报告时间仅作为观测上界。",
+  "records": [
+    {
+      "origin": "step04_replay",
+      "model": "Security",
+      "record": {
+        "provenance": {
+          "provider": "step04-compatible-source",
+          "source_api": "stock_basic",
+          "source_ref": "docs/step-04/probe-results.json#/records/0/requests/0/sample/0",
+          "raw_sha256": "325c4490bd42a64808186e4e9f1125de89bc001531ed95baab4188a3c42a7127",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "c14d1b99cb7e8f1d79adea1d934b8d0657a4e5e5807fbd637d65782b0619d559",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-07T17:29:41.254258+08:00",
+            "disclosed_on": null,
+            "disclosed_at": null,
+            "basis": "observed",
+            "available_at": "2026-11-07T17:29:41.254258+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "name": "平安银行",
+        "list_date": "1991-04-03",
+        "delist_date": null,
+        "listing_status": "unknown"
+      }
+    },
+    {
+      "origin": "step04_replay",
+      "model": "IndustryMembership",
+      "record": {
+        "provenance": {
+          "provider": "step04-compatible-source",
+          "source_api": "stock_basic",
+          "source_ref": "docs/step-04/probe-results.json#/records/0/requests/0/sample/0",
+          "raw_sha256": "325c4490bd42a64808186e4e9f1125de89bc001531ed95baab4188a3c42a7127",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "c14d1b99cb7e8f1d79adea1d934b8d0657a4e5e5807fbd637d65782b0619d559",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-07T17:29:41.254258+08:00",
+            "disclosed_on": null,
+            "disclosed_at": null,
+            "basis": "observed",
+            "available_at": "2026-11-07T17:29:41.254258+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "classification": "provider_basic",
+        "classification_version": null,
+        "level": null,
+        "industry_code": null,
+        "industry_name": "银行",
+        "effective_from": null,
+        "effective_to": null,
+        "history": "current_snapshot"
+      }
+    },
+    {
+      "origin": "step04_replay",
+      "model": "TradingCalendar",
+      "record": {
+        "provenance": {
+          "provider": "step04-compatible-source",
+          "source_api": "trade_cal",
+          "source_ref": "docs/step-04/probe-results.json#/records/9/requests/0/sample/0",
+          "raw_sha256": "325c4490bd42a64808186e4e9f1125de89bc001531ed95baab4188a3c42a7127",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "ed3f8e1aca43a4a7e49d97d77b6929279c74efdea4d1a6165f4e7bc3bb9f1df8",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-07T17:29:41.254258+08:00",
+            "disclosed_on": null,
+            "disclosed_at": null,
+            "basis": "observed",
+            "available_at": "2026-11-07T17:29:41.254258+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "exchange": "SSE",
+        "calendar_date": "2026-09-30",
+        "is_open": true,
+        "previous_open_date": null
+      }
+    },
+    {
+      "origin": "step04_replay",
+      "model": "PriceBar",
+      "record": {
+        "provenance": {
+          "provider": "step04-compatible-source",
+          "source_api": "daily",
+          "source_ref": "docs/step-04/probe-results.json#/records/1/requests/0/sample/0",
+          "raw_sha256": "325c4490bd42a64808186e4e9f1125de89bc001531ed95baab4188a3c42a7127",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "27ef0e1db81a839cf50fc94f3c7a6c34f245a71d47baefcbd8958770bc912d7b",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-07T17:29:41.254258+08:00",
+            "disclosed_on": null,
+            "disclosed_at": null,
+            "basis": "observed",
+            "available_at": "2026-11-07T17:29:41.254258+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "trade_date": "2026-09-30",
+        "frequency": "1d",
+        "adjustment": "none",
+        "open": {
+          "value": "11.36",
+          "raw_value": "11.36",
+          "unit": "CNY/share",
+          "raw_unit": "CNY/share",
+          "status": "ok",
+          "reason": null
+        },
+        "high": {
+          "value": "11.65",
+          "raw_value": "11.65",
+          "unit": "CNY/share",
+          "raw_unit": "CNY/share",
+          "status": "ok",
+          "reason": null
+        },
+        "low": {
+          "value": "11.33",
+          "raw_value": "11.33",
+          "unit": "CNY/share",
+          "raw_unit": "CNY/share",
+          "status": "ok",
+          "reason": null
+        },
+        "close": {
+          "value": "11.57",
+          "raw_value": "11.57",
+          "unit": "CNY/share",
+          "raw_unit": "CNY/share",
+          "status": "ok",
+          "reason": null
+        },
+        "volume": {
+          "value": "104535745.00",
+          "raw_value": "1045357.45",
+          "unit": "share",
+          "raw_unit": "lot",
+          "status": "ok",
+          "reason": null
+        },
+        "amount": {
+          "value": null,
+          "raw_value": null,
+          "unit": "CNY",
+          "raw_unit": "thousand_CNY",
+          "status": "not_requested",
+          "reason": "field_absent_from_projection"
+        }
+      }
+    },
+    {
+      "origin": "step04_replay",
+      "model": "AdjustmentFactor",
+      "record": {
+        "provenance": {
+          "provider": "step04-compatible-source",
+          "source_api": "adj_factor",
+          "source_ref": "docs/step-04/probe-results.json#/records/8/requests/0/sample/0",
+          "raw_sha256": "325c4490bd42a64808186e4e9f1125de89bc001531ed95baab4188a3c42a7127",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "029e8bfc28aebdac43f71271eb6d621bb6ec0355c964c1aab46e061c9e85610c",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-07T17:29:41.254258+08:00",
+            "disclosed_on": null,
+            "disclosed_at": null,
+            "basis": "observed",
+            "available_at": "2026-11-07T17:29:41.254258+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "trade_date": "2026-09-30",
+        "factor": {
+          "value": "142.0699",
+          "raw_value": "142.0699",
+          "unit": "factor",
+          "raw_unit": "factor",
+          "status": "ok",
+          "reason": null
+        }
+      }
+    },
+    {
+      "origin": "step04_replay",
+      "model": "Valuation",
+      "record": {
+        "provenance": {
+          "provider": "step04-compatible-source",
+          "source_api": "daily_basic",
+          "source_ref": "docs/step-04/probe-results.json#/records/2/requests/0/sample/0",
+          "raw_sha256": "325c4490bd42a64808186e4e9f1125de89bc001531ed95baab4188a3c42a7127",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "0db91630285146298c1aca4dd9aed23949899cb882d4a0ddfc710747d4a5b7a1",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-07T17:29:41.254258+08:00",
+            "disclosed_on": null,
+            "disclosed_at": null,
+            "basis": "observed",
+            "available_at": "2026-11-07T17:29:41.254258+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "trade_date": "2026-09-30",
+        "methodology": "provider_reported",
+        "pe": {
+          "value": "5.2665",
+          "raw_value": "5.2665",
+          "unit": "multiple",
+          "raw_unit": "multiple",
+          "status": "ok",
+          "reason": null
+        },
+        "pe_ttm": {
+          "value": "5.1664",
+          "raw_value": "5.1664",
+          "unit": "multiple",
+          "raw_unit": "multiple",
+          "status": "ok",
+          "reason": null
+        },
+        "pb": {
+          "value": "0.4795",
+          "raw_value": "0.4795",
+          "unit": "multiple",
+          "raw_unit": "multiple",
+          "status": "ok",
+          "reason": null
+        },
+        "total_market_cap": {
+          "value": "224526473574.0000",
+          "raw_value": "22452647.3574",
+          "unit": "CNY",
+          "raw_unit": "ten_thousand_CNY",
+          "status": "ok",
+          "reason": null
+        },
+        "float_market_cap": {
+          "value": null,
+          "raw_value": null,
+          "unit": "CNY",
+          "raw_unit": "ten_thousand_CNY",
+          "status": "not_requested",
+          "reason": "field_absent_from_projection"
+        },
+        "dividend_yield": {
+          "value": null,
+          "raw_value": null,
+          "unit": "ratio",
+          "raw_unit": "percent",
+          "status": "not_requested",
+          "reason": "field_absent_from_projection"
+        },
+        "dividend_yield_ttm": {
+          "value": null,
+          "raw_value": null,
+          "unit": "ratio",
+          "raw_unit": "percent",
+          "status": "not_requested",
+          "reason": "field_absent_from_projection"
+        }
+      }
+    },
+    {
+      "origin": "step04_replay",
+      "model": "FinancialFact",
+      "record": {
+        "provenance": {
+          "provider": "step04-compatible-source",
+          "source_api": "income",
+          "source_ref": "docs/step-04/probe-results.json#/records/3/requests/0/sample/0",
+          "raw_sha256": "325c4490bd42a64808186e4e9f1125de89bc001531ed95baab4188a3c42a7127",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "23f1e930ba73518c359f421b378460debefa537b42b2a13d6a6f2ad6ceb1bd29",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-07T17:29:41.254258+08:00",
+            "disclosed_on": null,
+            "disclosed_at": null,
+            "basis": "observed",
+            "available_at": "2026-11-07T17:29:41.254258+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "metric": "revenue",
+        "statement": "income",
+        "period": {
+          "end": "2026-06-30",
+          "start": null,
+          "basis": "unknown"
+        },
+        "scope": "unknown",
+        "company_type": "unknown",
+        "report_type": null,
+        "update_flag": null,
+        "announced_on": "2026-08-15",
+        "actual_announced_on": null,
+        "revision": "unknown",
+        "supersedes_version": null,
+        "amount": {
+          "value": "70617000000",
+          "raw_value": "70617000000",
+          "unit": "CNY",
+          "raw_unit": "CNY",
+          "status": "ok",
+          "reason": null
+        },
+        "calculation": null
+      }
+    },
+    {
+      "origin": "step04_replay",
+      "model": "FinancialFact",
+      "record": {
+        "provenance": {
+          "provider": "step04-compatible-source",
+          "source_api": "income",
+          "source_ref": "docs/step-04/probe-results.json#/records/3/requests/0/sample/0",
+          "raw_sha256": "325c4490bd42a64808186e4e9f1125de89bc001531ed95baab4188a3c42a7127",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "23f1e930ba73518c359f421b378460debefa537b42b2a13d6a6f2ad6ceb1bd29",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-07T17:29:41.254258+08:00",
+            "disclosed_on": null,
+            "disclosed_at": null,
+            "basis": "observed",
+            "available_at": "2026-11-07T17:29:41.254258+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "metric": "net_profit_parent",
+        "statement": "income",
+        "period": {
+          "end": "2026-06-30",
+          "start": null,
+          "basis": "unknown"
+        },
+        "scope": "unknown",
+        "company_type": "unknown",
+        "report_type": null,
+        "update_flag": null,
+        "announced_on": "2026-08-15",
+        "actual_announced_on": null,
+        "revision": "unknown",
+        "supersedes_version": null,
+        "amount": {
+          "value": "25696000000",
+          "raw_value": "25696000000",
+          "unit": "CNY",
+          "raw_unit": "CNY",
+          "status": "ok",
+          "reason": null
+        },
+        "calculation": null
+      }
+    },
+    {
+      "origin": "step04_replay",
+      "model": "FinancialFact",
+      "record": {
+        "provenance": {
+          "provider": "step04-compatible-source",
+          "source_api": "balancesheet",
+          "source_ref": "docs/step-04/probe-results.json#/records/4/requests/0/sample/0",
+          "raw_sha256": "325c4490bd42a64808186e4e9f1125de89bc001531ed95baab4188a3c42a7127",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "742888cf464a97b3ae280b098dbe6fc06877f630f2f1b63bd3f716e742c6307b",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-07T17:29:41.254258+08:00",
+            "disclosed_on": null,
+            "disclosed_at": null,
+            "basis": "observed",
+            "available_at": "2026-11-07T17:29:41.254258+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "metric": "total_assets",
+        "statement": "balancesheet",
+        "period": {
+          "end": "2026-06-30",
+          "start": null,
+          "basis": "instant"
+        },
+        "scope": "unknown",
+        "company_type": "unknown",
+        "report_type": null,
+        "update_flag": null,
+        "announced_on": "2026-08-15",
+        "actual_announced_on": null,
+        "revision": "unknown",
+        "supersedes_version": null,
+        "amount": {
+          "value": "6028785000000",
+          "raw_value": "6028785000000",
+          "unit": "CNY",
+          "raw_unit": "CNY",
+          "status": "ok",
+          "reason": null
+        },
+        "calculation": null
+      }
+    },
+    {
+      "origin": "step04_replay",
+      "model": "FinancialFact",
+      "record": {
+        "provenance": {
+          "provider": "step04-compatible-source",
+          "source_api": "balancesheet",
+          "source_ref": "docs/step-04/probe-results.json#/records/4/requests/0/sample/0",
+          "raw_sha256": "325c4490bd42a64808186e4e9f1125de89bc001531ed95baab4188a3c42a7127",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "742888cf464a97b3ae280b098dbe6fc06877f630f2f1b63bd3f716e742c6307b",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-07T17:29:41.254258+08:00",
+            "disclosed_on": null,
+            "disclosed_at": null,
+            "basis": "observed",
+            "available_at": "2026-11-07T17:29:41.254258+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "metric": "total_liabilities",
+        "statement": "balancesheet",
+        "period": {
+          "end": "2026-06-30",
+          "start": null,
+          "basis": "instant"
+        },
+        "scope": "unknown",
+        "company_type": "unknown",
+        "report_type": null,
+        "update_flag": null,
+        "announced_on": "2026-08-15",
+        "actual_announced_on": null,
+        "revision": "unknown",
+        "supersedes_version": null,
+        "amount": {
+          "value": "5480571000000",
+          "raw_value": "5480571000000",
+          "unit": "CNY",
+          "raw_unit": "CNY",
+          "status": "ok",
+          "reason": null
+        },
+        "calculation": null
+      }
+    },
+    {
+      "origin": "step04_replay",
+      "model": "FinancialFact",
+      "record": {
+        "provenance": {
+          "provider": "step04-compatible-source",
+          "source_api": "cashflow",
+          "source_ref": "docs/step-04/probe-results.json#/records/5/requests/0/sample/0",
+          "raw_sha256": "325c4490bd42a64808186e4e9f1125de89bc001531ed95baab4188a3c42a7127",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "11741b647ea0508739f53dd96230429a4fe6fa2d627d62c9204749902569f98a",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-07T17:29:41.254258+08:00",
+            "disclosed_on": null,
+            "disclosed_at": null,
+            "basis": "observed",
+            "available_at": "2026-11-07T17:29:41.254258+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "metric": "operating_cash_flow",
+        "statement": "cashflow",
+        "period": {
+          "end": "2026-06-30",
+          "start": null,
+          "basis": "unknown"
+        },
+        "scope": "unknown",
+        "company_type": "unknown",
+        "report_type": null,
+        "update_flag": null,
+        "announced_on": "2026-08-15",
+        "actual_announced_on": null,
+        "revision": "unknown",
+        "supersedes_version": null,
+        "amount": {
+          "value": "215012000000",
+          "raw_value": "215012000000",
+          "unit": "CNY",
+          "raw_unit": "CNY",
+          "status": "ok",
+          "reason": null
+        },
+        "calculation": null
+      }
+    },
+    {
+      "origin": "step04_replay",
+      "model": "CorporateAction",
+      "record": {
+        "provenance": {
+          "provider": "step04-compatible-source",
+          "source_api": "dividend",
+          "source_ref": "docs/step-04/probe-followup.json#/records/1/requests/0/sample/0",
+          "raw_sha256": "4b8c182fa4b29ebd331f8baee7e893ccf16026359b3502d204544bd302f82ac0",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "34b86f3a3dcc3c7993052f34635cd7355631ff5e66d8c157dd17e0136cdc814c",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-07T17:30:25.558102+08:00",
+            "disclosed_on": null,
+            "disclosed_at": null,
+            "basis": "observed",
+            "available_at": "2026-11-07T17:30:25.558102+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "event_id": "example-unresolved-event-1",
+        "action": "dividend",
+        "report_end": "2026-06-30",
+        "announced_on": "2026-08-15",
+        "stage": "unknown",
+        "raw_stage": null,
+        "cash_after_tax": {
+          "value": "0",
+          "raw_value": "0",
+          "unit": "CNY/share",
+          "raw_unit": "CNY/share",
+          "status": "ok",
+          "reason": null
+        },
+        "cash_before_tax": {
+          "value": null,
+          "raw_value": null,
+          "unit": "CNY/share",
+          "raw_unit": "CNY/share",
+          "status": "not_requested",
+          "reason": "field_absent_from_projection"
+        },
+        "stock_distribution": {
+          "value": null,
+          "raw_value": null,
+          "unit": "ratio",
+          "raw_unit": "ratio",
+          "status": "not_requested",
+          "reason": "field_absent_from_projection"
+        },
+        "record_date": null,
+        "ex_date": null,
+        "pay_date": null,
+        "payment_status": "unverified"
+      }
+    },
+    {
+      "origin": "step04_replay",
+      "model": "IndustryMembership",
+      "record": {
+        "provenance": {
+          "provider": "step04-compatible-source",
+          "source_api": "index_member_all",
+          "source_ref": "docs/step-04/probe-results.json#/records/7/requests/0/sample/0",
+          "raw_sha256": "325c4490bd42a64808186e4e9f1125de89bc001531ed95baab4188a3c42a7127",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "6724ece4fb35ef1d2b5de3d2b2ba6261dc3724cffdbaf2dbe207584e309fe62c",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-07T17:29:41.254258+08:00",
+            "disclosed_on": null,
+            "disclosed_at": null,
+            "basis": "observed",
+            "available_at": "2026-11-07T17:29:41.254258+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "classification": "SW",
+        "classification_version": null,
+        "level": 1,
+        "industry_code": "801780.SI",
+        "industry_name": "银行",
+        "effective_from": "1991-04-03",
+        "effective_to": null,
+        "history": "interval_unverified"
+      }
+    },
+    {
+      "origin": "synthetic_not_market_data",
+      "model": "FinancialFact",
+      "record": {
+        "provenance": {
+          "provider": "synthetic",
+          "source_api": "income",
+          "source_ref": "synthetic:financial-example",
+          "raw_sha256": "24755abe632b113a4003d54c7ded7fcb44aa80a4e0cc1b5e5b950c719abba421",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "24755abe632b113a4003d54c7ded7fcb44aa80a4e0cc1b5e5b950c719abba421",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-08T12:00:00+08:00",
+            "disclosed_on": "2026-08-15",
+            "disclosed_at": null,
+            "basis": "date_only",
+            "available_at": "2026-08-16T00:00:00+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "metric": "net_profit_parent",
+        "statement": "income",
+        "period": {
+          "end": "2026-06-30",
+          "start": "2026-01-01",
+          "basis": "ytd"
+        },
+        "scope": "consolidated",
+        "company_type": "industrial",
+        "report_type": "1",
+        "update_flag": "1",
+        "announced_on": "2026-08-15",
+        "actual_announced_on": null,
+        "revision": "reported",
+        "supersedes_version": null,
+        "amount": {
+          "value": "100",
+          "raw_value": "100",
+          "unit": "CNY",
+          "raw_unit": "CNY",
+          "status": "ok",
+          "reason": null
+        },
+        "calculation": null
+      }
+    },
+    {
+      "origin": "synthetic_not_market_data",
+      "model": "FinancialFact",
+      "record": {
+        "provenance": {
+          "provider": "synthetic",
+          "source_api": "income",
+          "source_ref": "synthetic:financial-example",
+          "raw_sha256": "60fa8d9d3cf8e1bc049f71a45b5e6e35a82dfe3a961824a6a74f2341dc6a0be7",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "60fa8d9d3cf8e1bc049f71a45b5e6e35a82dfe3a961824a6a74f2341dc6a0be7",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-08T12:00:00+08:00",
+            "disclosed_on": "2026-08-15",
+            "disclosed_at": null,
+            "basis": "date_only",
+            "available_at": "2026-08-16T00:00:00+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "metric": "net_profit_total",
+        "statement": "income",
+        "period": {
+          "end": "2026-06-30",
+          "start": "2026-01-01",
+          "basis": "ytd"
+        },
+        "scope": "consolidated",
+        "company_type": "industrial",
+        "report_type": "1",
+        "update_flag": "1",
+        "announced_on": "2026-08-15",
+        "actual_announced_on": null,
+        "revision": "reported",
+        "supersedes_version": null,
+        "amount": {
+          "value": "120",
+          "raw_value": "120",
+          "unit": "CNY",
+          "raw_unit": "CNY",
+          "status": "ok",
+          "reason": null
+        },
+        "calculation": null
+      }
+    },
+    {
+      "origin": "synthetic_not_market_data",
+      "model": "FinancialFact",
+      "record": {
+        "provenance": {
+          "provider": "synthetic",
+          "source_api": "income",
+          "source_ref": "synthetic:financial-example",
+          "raw_sha256": "286702dafcc057429b54e1250df4cb1c762efb791f042d9d77fbf4501610cfc1",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "286702dafcc057429b54e1250df4cb1c762efb791f042d9d77fbf4501610cfc1",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-08T12:00:00+08:00",
+            "disclosed_on": "2026-08-15",
+            "disclosed_at": null,
+            "basis": "date_only",
+            "available_at": "2026-08-16T00:00:00+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "metric": "net_profit_parent",
+        "statement": "income",
+        "period": {
+          "end": "2026-06-30",
+          "start": "2026-04-01",
+          "basis": "quarter"
+        },
+        "scope": "consolidated",
+        "company_type": "industrial",
+        "report_type": "2",
+        "update_flag": "1",
+        "announced_on": "2026-08-15",
+        "actual_announced_on": null,
+        "revision": "reported",
+        "supersedes_version": null,
+        "amount": {
+          "value": "45",
+          "raw_value": "45",
+          "unit": "CNY",
+          "raw_unit": "CNY",
+          "status": "ok",
+          "reason": null
+        },
+        "calculation": null
+      }
+    },
+    {
+      "origin": "synthetic_not_market_data",
+      "model": "FinancialFact",
+      "record": {
+        "provenance": {
+          "provider": "synthetic",
+          "source_api": "income",
+          "source_ref": "synthetic:financial-example",
+          "raw_sha256": "7ea646c5708d705234701f17b812595dd8eec2c03b3caafccfa1da5422bdf7cb",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "7ea646c5708d705234701f17b812595dd8eec2c03b3caafccfa1da5422bdf7cb",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-08T12:00:00+08:00",
+            "disclosed_on": "2026-10-15",
+            "disclosed_at": null,
+            "basis": "date_only",
+            "available_at": "2026-10-16T00:00:00+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "security": {
+          "market": "CN_A",
+          "exchange": "SZSE",
+          "ts_code": "000001.SZ"
+        },
+        "metric": "net_profit_parent",
+        "statement": "income",
+        "period": {
+          "end": "2026-06-30",
+          "start": "2026-01-01",
+          "basis": "ytd"
+        },
+        "scope": "consolidated",
+        "company_type": "industrial",
+        "report_type": "4",
+        "update_flag": "1",
+        "announced_on": "2026-10-15",
+        "actual_announced_on": null,
+        "revision": "adjusted",
+        "supersedes_version": "24755abe632b113a4003d54c7ded7fcb44aa80a4e0cc1b5e5b950c719abba421",
+        "amount": {
+          "value": "101",
+          "raw_value": "101",
+          "unit": "CNY",
+          "raw_unit": "CNY",
+          "status": "ok",
+          "reason": null
+        },
+        "calculation": null
+      }
+    },
+    {
+      "origin": "synthetic_not_market_data",
+      "model": "Evidence",
+      "record": {
+        "provenance": {
+          "provider": "synthetic",
+          "source_api": "income",
+          "source_ref": "synthetic:financial-example",
+          "raw_sha256": "7ea646c5708d705234701f17b812595dd8eec2c03b3caafccfa1da5422bdf7cb",
+          "request_id": "00000000000000000000000000000005",
+          "data_version": "7ea646c5708d705234701f17b812595dd8eec2c03b3caafccfa1da5422bdf7cb",
+          "schema_version": "1.0.0",
+          "mapping_version": "step05-v1",
+          "timing": {
+            "fetched_at": "2026-11-08T12:00:00+08:00",
+            "disclosed_on": "2026-10-15",
+            "disclosed_at": null,
+            "basis": "date_only",
+            "available_at": "2026-10-16T00:00:00+08:00"
+          },
+          "quality": "unverified",
+          "freshness": "unknown"
+        },
+        "evidence_id": "ev_5e23c5a59778f584d337d8b61241dae2190aff44b0d17df5c1f5399f70f126d3",
+        "request_id": "00000000000000000000000000000005",
+        "kind": "structured",
+        "record_versions": [
+          "7ea646c5708d705234701f17b812595dd8eec2c03b3caafccfa1da5422bdf7cb"
+        ],
+        "locator": "FinancialFact.amount",
+        "input_evidence_ids": [],
+        "formula": null
+      }
+    }
+  ],
+  "errors": [
+    {
+      "request_id": "00000000000000000000000000000005",
+      "status": "permission_denied",
+      "reason_code": "provider_permission_denied",
+      "source_api": "income",
+      "retryable": false
+    },
+    {
+      "request_id": "00000000000000000000000000000005",
+      "status": "source_failure",
+      "reason_code": "provider_timeout",
+      "source_api": "income",
+      "retryable": false
+    },
+    {
+      "request_id": "00000000000000000000000000000005",
+      "status": "not_disclosed",
+      "reason_code": "verified_disclosure_pending",
+      "source_api": "income",
+      "retryable": false
+    },
+    {
+      "request_id": "00000000000000000000000000000005",
+      "status": "null_value",
+      "reason_code": "source_null",
+      "source_api": "income",
+      "retryable": false
+    },
+    {
+      "request_id": "00000000000000000000000000000005",
+      "status": "quality_error",
+      "reason_code": "unknown_report_type",
+      "source_api": "income",
+      "retryable": false
+    },
+    {
+      "request_id": "00000000000000000000000000000005",
+      "status": "stale",
+      "reason_code": "update_overdue",
+      "source_api": "income",
+      "retryable": false
+    },
+    {
+      "request_id": "00000000000000000000000000000005",
+      "status": "no_data",
+      "reason_code": "successful_empty_response",
+      "source_api": "income",
+      "retryable": false
+    }
+  ]
+}

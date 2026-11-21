@@ -1,0 +1,375 @@
+{
+  "version": "0.1",
+  "status": "accepted",
+  "created_on": "2026-11-07",
+  "samples": [
+    {
+      "sample_id": "S01",
+      "ts_code": "600036.SH",
+      "reference_name": "招商银行",
+      "selection_group": "银行",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S02",
+      "ts_code": "601398.SH",
+      "reference_name": "工商银行",
+      "selection_group": "银行",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S03",
+      "ts_code": "000001.SZ",
+      "reference_name": "平安银行",
+      "selection_group": "银行",
+      "exchange": "SZSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S04",
+      "ts_code": "601166.SH",
+      "reference_name": "兴业银行",
+      "selection_group": "银行",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S05",
+      "ts_code": "600519.SH",
+      "reference_name": "贵州茅台",
+      "selection_group": "消费",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S06",
+      "ts_code": "000858.SZ",
+      "reference_name": "五粮液",
+      "selection_group": "消费",
+      "exchange": "SZSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S07",
+      "ts_code": "600887.SH",
+      "reference_name": "伊利股份",
+      "selection_group": "消费",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S08",
+      "ts_code": "603288.SH",
+      "reference_name": "海天味业",
+      "selection_group": "消费",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S09",
+      "ts_code": "000333.SZ",
+      "reference_name": "美的集团",
+      "selection_group": "制造",
+      "exchange": "SZSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S10",
+      "ts_code": "000651.SZ",
+      "reference_name": "格力电器",
+      "selection_group": "制造",
+      "exchange": "SZSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S11",
+      "ts_code": "600031.SH",
+      "reference_name": "三一重工",
+      "selection_group": "制造",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S12",
+      "ts_code": "600760.SH",
+      "reference_name": "中航沈飞",
+      "selection_group": "制造",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": [
+        {
+          "kind": "rename",
+          "old_name": "中航黑豹",
+          "new_name": "中航沈飞",
+          "effective_date": null,
+          "source_record_ids": [
+            "SRC04"
+          ],
+          "note": "年报定位历史前身；简称变更准确生效日待专项公告补充。"
+        }
+      ]
+    },
+    {
+      "sample_id": "S13",
+      "ts_code": "002594.SZ",
+      "reference_name": "比亚迪",
+      "selection_group": "汽车",
+      "exchange": "SZSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S14",
+      "ts_code": "600104.SH",
+      "reference_name": "上汽集团",
+      "selection_group": "汽车",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S15",
+      "ts_code": "300750.SZ",
+      "reference_name": "宁德时代",
+      "selection_group": "新能源",
+      "exchange": "SZSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S16",
+      "ts_code": "601012.SH",
+      "reference_name": "隆基绿能",
+      "selection_group": "新能源",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S17",
+      "ts_code": "688981.SH",
+      "reference_name": "中芯国际",
+      "selection_group": "科技",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S18",
+      "ts_code": "002415.SZ",
+      "reference_name": "海康威视",
+      "selection_group": "科技",
+      "exchange": "SZSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S19",
+      "ts_code": "000725.SZ",
+      "reference_name": "京东方A",
+      "selection_group": "科技",
+      "exchange": "SZSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S20",
+      "ts_code": "002230.SZ",
+      "reference_name": "科大讯飞",
+      "selection_group": "科技",
+      "exchange": "SZSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S21",
+      "ts_code": "600276.SH",
+      "reference_name": "恒瑞医药",
+      "selection_group": "医药",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S22",
+      "ts_code": "300760.SZ",
+      "reference_name": "迈瑞医疗",
+      "selection_group": "医药",
+      "exchange": "SZSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S23",
+      "ts_code": "601088.SH",
+      "reference_name": "中国神华",
+      "selection_group": "能源",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S24",
+      "ts_code": "600028.SH",
+      "reference_name": "中国石化",
+      "selection_group": "能源",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S25",
+      "ts_code": "600900.SH",
+      "reference_name": "长江电力",
+      "selection_group": "公用事业",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S26",
+      "ts_code": "600030.SH",
+      "reference_name": "中信证券",
+      "selection_group": "非银金融",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S27",
+      "ts_code": "601211.SH",
+      "reference_name": "国泰君安",
+      "selection_group": "非银金融",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": [
+        {
+          "kind": "suspension",
+          "as_of": "2024-09-06",
+          "reference_name_as_of": "2024-09-06",
+          "source_record_ids": [
+            "SRC02"
+          ],
+          "note": "国泰君安是该历史事件的简称；当前名称须由主表更新。"
+        }
+      ]
+    },
+    {
+      "sample_id": "S28",
+      "ts_code": "600115.SH",
+      "reference_name": "中国东航",
+      "selection_group": "交通运输",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": [
+        {
+          "kind": "loss",
+          "report_period": "2024-12-31",
+          "as_of": "2025-06-30",
+          "source_record_ids": [
+            "SRC03"
+          ]
+        }
+      ]
+    },
+    {
+      "sample_id": "S29",
+      "ts_code": "600309.SH",
+      "reference_name": "万华化学",
+      "selection_group": "化工",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": null,
+      "history_status": "pending",
+      "edge_cases": []
+    },
+    {
+      "sample_id": "S30",
+      "ts_code": "603072.SH",
+      "reference_name": "天和磁材",
+      "selection_group": "材料",
+      "exchange": "SSE",
+      "master_status": "pending_provider_verification",
+      "list_date": "2025-01-03",
+      "history_status": "pending",
+      "edge_cases": [
+        {
+          "kind": "listed_under_one_year",
+          "as_of": "2025-06-30",
+          "source_record_ids": [
+            "SRC01"
+          ]
+        }
+      ]
+    }
+  ]
+}

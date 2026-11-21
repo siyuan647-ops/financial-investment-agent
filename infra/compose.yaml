@@ -1,0 +1,470 @@
+{
+  "name": "a-share-step03",
+  "services": {
+    "database": {
+      "image": "timescale/timescaledb:2.23.0-pg17@sha256:92fcd95150342632b8bcd12c2248599ba58441bc6dd3b80576445027b06cd1eb",
+      "restart": "unless-stopped",
+      "mem_limit": "512m",
+      "cpus": 1,
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "environment": {
+        "POSTGRES_PASSWORD": "${POSTGRES_PASSWORD:?Run init}",
+        "APP_DB_PASSWORD": "${APP_DB_PASSWORD:?Run init}",
+        "PREFECT_DB_PASSWORD": "${PREFECT_DB_PASSWORD:?Run init}",
+        "TIMESCALEDB_TELEMETRY": "off",
+        "NO_TS_TUNE": "true"
+      },
+      "volumes": [
+        "postgres_data:/var/lib/postgresql/data",
+        "./postgres/init.sh:/docker-entrypoint-initdb.d/010-app.sh:ro"
+      ],
+      "command": [
+        "postgres",
+        "-c",
+        "shared_buffers=128MB",
+        "-c",
+        "max_connections=60"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD-SHELL",
+          "pg_isready -h 127.0.0.1 -U postgres -d postgres"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 12,
+        "start_period": "30s"
+      }
+    },
+    "redis": {
+      "image": "redis:7.4.7-alpine@sha256:02f2cc4882f8bf87c79a220ac958f58c700bdec0dfb9b9ea61b62fb0e8f1bfcf",
+      "restart": "unless-stopped",
+      "mem_limit": "128m",
+      "cpus": 1,
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "command": [
+        "redis-server",
+        "--appendonly",
+        "yes",
+        "--maxmemory",
+        "64mb",
+        "--maxmemory-policy",
+        "noeviction"
+      ],
+      "volumes": [
+        "redis_data:/data"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "redis-cli",
+          "ping"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 12,
+        "start_period": "30s"
+      }
+    },
+    "prefect-server": {
+      "image": "prefecthq/prefect:3.6.4-python3.13@sha256:53889f6574331cc3640672f338ab8e34cffabd25f231bd87296851c7d8eca318",
+      "restart": "unless-stopped",
+      "mem_limit": "768m",
+      "cpus": 1,
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "environment": {
+        "PREFECT_API_URL": "http://prefect-server:4200/api",
+        "PREFECT_SERVER_DATABASE_CONNECTION_URL": "postgresql+asyncpg://prefect:${PREFECT_DB_PASSWORD:?Run infra/manage.ps1 init}@database:5432/prefect",
+        "PREFECT_SERVER_EVENTS_MESSAGING_BROKER": "prefect_redis.messaging",
+        "PREFECT_SERVER_EVENTS_MESSAGING_CACHE": "prefect_redis.messaging",
+        "PREFECT_REDIS_MESSAGING_HOST": "redis",
+        "PREFECT_REDIS_MESSAGING_DB": "1",
+        "PREFECT_SERVER_DOCKET_URL": "redis://redis:6379/2",
+        "PREFECT_SERVER_ANALYTICS_ENABLED": "false",
+        "PREFECT_SERVER_API_HOST": "0.0.0.0",
+        "PREFECT_SERVER_UI_API_URL": "http://127.0.0.1:14200/api"
+      },
+      "command": [
+        "prefect",
+        "server",
+        "start",
+        "--no-services"
+      ],
+      "ports": [
+        "127.0.0.1:14200:4200"
+      ],
+      "depends_on": {
+        "database": {
+          "condition": "service_healthy"
+        },
+        "redis": {
+          "condition": "service_healthy"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:4200/api/health', timeout=3)"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 12,
+        "start_period": "30s"
+      }
+    },
+    "prefect-services": {
+      "image": "prefecthq/prefect:3.6.4-python3.13@sha256:53889f6574331cc3640672f338ab8e34cffabd25f231bd87296851c7d8eca318",
+      "restart": "unless-stopped",
+      "mem_limit": "512m",
+      "cpus": 1,
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "environment": {
+        "PREFECT_API_URL": "http://prefect-server:4200/api",
+        "PREFECT_SERVER_DATABASE_CONNECTION_URL": "postgresql+asyncpg://prefect:${PREFECT_DB_PASSWORD:?Run infra/manage.ps1 init}@database:5432/prefect",
+        "PREFECT_SERVER_EVENTS_MESSAGING_BROKER": "prefect_redis.messaging",
+        "PREFECT_SERVER_EVENTS_MESSAGING_CACHE": "prefect_redis.messaging",
+        "PREFECT_REDIS_MESSAGING_HOST": "redis",
+        "PREFECT_REDIS_MESSAGING_DB": "1",
+        "PREFECT_SERVER_DOCKET_URL": "redis://redis:6379/2",
+        "PREFECT_SERVER_ANALYTICS_ENABLED": "false"
+      },
+      "command": [
+        "prefect",
+        "server",
+        "services",
+        "start"
+      ],
+      "depends_on": {
+        "prefect-server": {
+          "condition": "service_healthy"
+        }
+      }
+    },
+    "prefect-worker": {
+      "image": "a-share-worker:step27",
+      "build": {
+        "context": "..",
+        "dockerfile": "infra/Dockerfile.worker"
+      },
+      "restart": "unless-stopped",
+      "mem_limit": "512m",
+      "cpus": 1,
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "environment": {
+        "PREFECT_API_URL": "http://prefect-server:4200/api",
+        "PREFECT_WORKER_WEBSERVER_HOST": "0.0.0.0",
+        "APP_ENVIRONMENT": "development",
+        "APP_DEV_IDENTITY_ENABLED": "true",
+        "APP_DATABASE_URL": "postgresql://a_share:${APP_DB_PASSWORD:?Run init}@database:5432/a_share",
+        "APP_REDIS_URL": "redis://redis:6379/0",
+        "APP_PREFECT_URL": "http://prefect-server:4200/api",
+        "APP_PREFECT_WORKER_URL": "http://prefect-worker:8080",
+        "APP_DATA_SOURCE_URL": "${APP_DATA_SOURCE_URL:?Set APP_DATA_SOURCE_URL in infra/.env}",
+        "APP_DATA_SOURCE_TOKEN": "${APP_DATA_SOURCE_TOKEN:?Set APP_DATA_SOURCE_TOKEN in infra/.env}",
+        "APP_SCHEDULE_CODES": "${APP_SCHEDULE_CODES:-}"
+      },
+      "command": [
+        "prefect",
+        "worker",
+        "start",
+        "--pool",
+        "a-share-local",
+        "--type",
+        "process",
+        "--with-healthcheck",
+        "--limit",
+        "1"
+      ],
+      "volumes": [
+        "raw_data:/data/raw",
+        "./smoke:/opt/smoke:ro"
+      ],
+      "depends_on": {
+        "prefect-server": {
+          "condition": "service_healthy"
+        },
+        "raw-init": {
+          "condition": "service_completed_successfully"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=3)"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 12,
+        "start_period": "30s"
+      }
+    },
+    "api": {
+      "image": "a-share-api:step27",
+      "restart": "unless-stopped",
+      "mem_limit": "256m",
+      "cpus": 1,
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "build": {
+        "context": "..",
+        "dockerfile": "infra/Dockerfile"
+      },
+      "environment": {
+        "APP_ENVIRONMENT": "development",
+        "APP_DEV_IDENTITY_ENABLED": "true",
+        "APP_DATABASE_URL": "postgresql://a_share:${APP_DB_PASSWORD:?Run init}@database:5432/a_share",
+        "APP_REDIS_URL": "redis://redis:6379/0",
+        "APP_PREFECT_URL": "http://prefect-server:4200/api",
+        "APP_PREFECT_WORKER_URL": "http://prefect-worker:8080",
+        "APP_DATA_SOURCE_URL": "${APP_DATA_SOURCE_URL:?Set APP_DATA_SOURCE_URL in infra/.env}",
+        "APP_DATA_SOURCE_TOKEN": "${APP_DATA_SOURCE_TOKEN:?Set APP_DATA_SOURCE_TOKEN in infra/.env}",
+        "APP_QWEN_URL": null,
+        "APP_QWEN_TOKEN": null,
+        "APP_QWEN_MODEL": null,
+        "APP_QWEN_PROFILES": null,
+        "APP_SPECIALIST_MODEL_PROFILES": null
+      },
+      "ports": [
+        "127.0.0.1:18000:8000"
+      ],
+      "volumes": [
+        "raw_data:/data/raw"
+      ],
+      "depends_on": {
+        "database": {
+          "condition": "service_healthy"
+        },
+        "redis": {
+          "condition": "service_healthy"
+        },
+        "prefect-server": {
+          "condition": "service_healthy"
+        },
+        "prefect-worker": {
+          "condition": "service_healthy"
+        },
+        "raw-init": {
+          "condition": "service_completed_successfully"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready', timeout=3)"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 12,
+        "start_period": "30s"
+      }
+    },
+    "research-worker": {
+      "profiles": [
+        "research"
+      ],
+      "image": "a-share-api:step27",
+      "restart": "unless-stopped",
+      "mem_limit": "512m",
+      "cpus": 1,
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "build": {
+        "context": "..",
+        "dockerfile": "infra/Dockerfile"
+      },
+      "environment": {
+        "APP_ENVIRONMENT": "development",
+        "APP_DEV_IDENTITY_ENABLED": "true",
+        "APP_DATABASE_URL": "postgresql://a_share:${APP_DB_PASSWORD:?Run init}@database:5432/a_share",
+        "APP_REDIS_URL": "redis://redis:6379/0",
+        "APP_PREFECT_URL": "http://prefect-server:4200/api",
+        "APP_PREFECT_WORKER_URL": "http://prefect-worker:8080",
+        "APP_DATA_SOURCE_URL": "${APP_DATA_SOURCE_URL:?Set APP_DATA_SOURCE_URL in infra/.env}",
+        "APP_DATA_SOURCE_TOKEN": "${APP_DATA_SOURCE_TOKEN:?Set APP_DATA_SOURCE_TOKEN in infra/.env}",
+        "APP_QWEN_URL": null,
+        "APP_QWEN_TOKEN": null,
+        "APP_QWEN_MODEL": null,
+        "APP_QWEN_PROFILES": null,
+        "APP_SPECIALIST_MODEL_PROFILES": null,
+        "APP_DEEP_RESEARCH_TIMEOUT_SECONDS": "${APP_DEEP_RESEARCH_TIMEOUT_SECONDS:-300}",
+        "APP_DEEP_RESEARCH_MAX_TOKENS": "${APP_DEEP_RESEARCH_MAX_TOKENS:-50000}",
+        "APP_DEEP_RESEARCH_MAX_SUPPLEMENTAL_ROUNDS": "${APP_DEEP_RESEARCH_MAX_SUPPLEMENTAL_ROUNDS:-1}",
+        "APP_DEEP_RESEARCH_LEASE_SECONDS": "${APP_DEEP_RESEARCH_LEASE_SECONDS:-60}",
+        "APP_DEEP_RESEARCH_ROLE_TIMEOUT_SECONDS": "${APP_DEEP_RESEARCH_ROLE_TIMEOUT_SECONDS:-120}",
+        "APP_DEEP_RESEARCH_ROLE_MAX_TOKENS": "${APP_DEEP_RESEARCH_ROLE_MAX_TOKENS:-16000}"
+      },
+      "command": [
+        "python",
+        "-m",
+        "app.workers.research"
+      ],
+      "volumes": [
+        "raw_data:/data/raw"
+      ],
+      "depends_on": {
+        "database": {
+          "condition": "service_healthy"
+        },
+        "redis": {
+          "condition": "service_healthy"
+        },
+        "raw-init": {
+          "condition": "service_completed_successfully"
+        }
+      }
+    },
+    "prometheus": {
+      "image": "prom/prometheus:v3.7.3@sha256:49214755b6153f90a597adcbff0252cc61069f8ab69ce8411285cd4a560e8038",
+      "restart": "unless-stopped",
+      "mem_limit": "256m",
+      "cpus": 1,
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "command": [
+        "--config.file=/etc/prometheus/prometheus.yml",
+        "--storage.tsdb.retention.time=7d",
+        "--storage.tsdb.retention.size=1GB"
+      ],
+      "volumes": [
+        "./prometheus.yml:/etc/prometheus/prometheus.yml:ro",
+        "prometheus_data:/prometheus"
+      ],
+      "ports": [
+        "127.0.0.1:19090:9090"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "wget",
+          "-q",
+          "-O",
+          "/dev/null",
+          "http://127.0.0.1:9090/-/ready"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 12,
+        "start_period": "30s"
+      }
+    },
+    "grafana": {
+      "image": "grafana/grafana:12.2.1@sha256:35c41e0fd0295f5d0ee5db7e780cf33506abfaf47686196f825364889dee878b",
+      "restart": "unless-stopped",
+      "mem_limit": "256m",
+      "cpus": 1,
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "environment": {
+        "GF_SECURITY_ADMIN_PASSWORD": "${GRAFANA_PASSWORD:?Run init}",
+        "GF_USERS_ALLOW_SIGN_UP": "false",
+        "GF_ANALYTICS_REPORTING_ENABLED": "false",
+        "GF_PLUGINS_PREINSTALL_DISABLED": "true",
+        "GF_ANALYTICS_CHECK_FOR_UPDATES": "false",
+        "GF_ANALYTICS_CHECK_FOR_PLUGIN_UPDATES": "false"
+      },
+      "volumes": [
+        "grafana_data:/var/lib/grafana",
+        "./grafana/provisioning:/etc/grafana/provisioning:ro",
+        "./grafana/dashboards:/var/lib/grafana/dashboards:ro"
+      ],
+      "ports": [
+        "127.0.0.1:13000:3000"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "wget",
+          "-q",
+          "-O",
+          "/dev/null",
+          "http://127.0.0.1:3000/api/health"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 12,
+        "start_period": "30s"
+      }
+    },
+    "raw-init": {
+      "image": "a-share-api:step27",
+      "user": "0",
+      "restart": "no",
+      "mem_limit": "64m",
+      "command": [
+        "python",
+        "-c",
+        "import os; os.chown(\"/data/raw\", 10001, 10001); os.chmod(\"/data/raw\", 0o770)"
+      ],
+      "volumes": [
+        "raw_data:/data/raw"
+      ],
+      "pull_policy": "never"
+    }
+  },
+  "volumes": {
+    "postgres_data": {},
+    "redis_data": {},
+    "raw_data": {},
+    "prometheus_data": {},
+    "grafana_data": {}
+  },
+  "networks": {
+    "default": {}
+  }
+}
